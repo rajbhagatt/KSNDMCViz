@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>
+Raj's KSNDMC Data Visualizer
+</title>
+	<meta charset="utf-8" />
+	
+  	<link href='style/css.css' rel='stylesheet' type='text/css'>
+ 	<link rel="shortcut icon" href="#" />
+	<!-- Leaflet -->
+	<link rel="stylesheet" href="style/leaflet.css" />
+	
+	<link rel="stylesheet" href="style/basics.css" />
+	
+	<script> L_PREFER_CANVAS = true;</script>
+	<script src="script/leaflet.js"></script>
+	
+	
+	<script src="script/jquery.min.js"></script>
+	<script src="script/leaflet-pip.js"></script>
+	<script src="script/rainbowvis.js"></script>
+	
+	<script type="text/javascript" src="script/jsonConverters.js"></script>
+	<script type="text/javascript" src="script/Chart.js"></script>
+	
+	
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsB9lQ1RL-me8cDJsmt1hyQADc65uIMBg"></script>
+	<script src="script/leaflet-google.js"></script>
+	
+	
+
+</head>
+<body>
+<div class="loader" id="loaddiv" style="left:50%"></div>
+<div id="formsect" style="width: 20%; height: 80%; float: left; top:5%; line-height: 30px">
+<form id="mapping" class='drop' style="line-height: 30px; padding-left:15px;">
+<p align='center'>
+<b>KSNDMC DATA VISUALIZER
+<br>
+Choose Date </b><br>
+<input type="date" name="seld" id="datebox">
+<br>
+<b>Choose Time</b><br>
+<select id="timebox" class='drop' style="float: center">
+<option value='00_00'>00:00</option>
+<option value='00_15'>00:15</option>
+<option value='00_30'>00:30</option>
+<option value='00_45'>00:45</option>
+<option value='01_00'>01:00</option>
+<option value='01_15'>01:15</option>
+<option value='01_30'>01:30</option>
+<option value='01_45'>01:45</option>
+<option value='02_00'>02:00</option>
+<option value='02_15'>02:15</option>
+<option value='02_30'>02:30</option>
+<option value='02_45'>02:45</option>
+<option value='03_00'>03:00</option>
+<option value='03_15'>03:15</option>
+<option value='03_30'>03:30</option>
+<option value='03_45'>03:45</option>
+<option value='04_00'>04:00</option>
+<option value='04_15'>04:15</option>
+<option value='04_30'>04:30</option>
+<option value='04_45'>04:45</option>
+<option value='05_00'>05:00</option>
+<option value='05_15'>05:15</option>
+<option value='05_30'>05:30</option>
+<option value='05_45'>05:45</option>
+<option value='06_00'>06:00</option>
+<option value='06_15'>06:15</option>
+<option value='06_30'>06:30</option>
+<option value='06_45'>06:45</option>
+<option value='07_00'>07:00</option>
+<option value='07_15'>07:15</option>
+<option value='07_30'>07:30</option>
+<option value='07_45'>07:45</option>
+<option value='08_00'>08:00</option>
+<option value='08_15'>08:15</option>
+<option value='08_30'>08:30</option>
+<option value='08_45'>08:45</option>
+<option value='09_00'>09:00</option>
+<option value='09_15'>09:15</option>
+<option value='09_30'>09:30</option>
+<option value='09_45'>09:45</option>
+<option value='10_00'>10:00</option>
+<option value='10_15'>10:15</option>
+<option value='10_30'>10:30</option>
+<option value='10_45'>10:45</option>
+<option value='11_00'>11:00</option>
+<option value='11_15'>11:15</option>
+<option value='11_30'>11:30</option>
+<option value='11_45'>11:45</option>
+<option value='12_00'>12:00</option>
+<option value='12_15'>12:15</option>
+<option value='12_30'>12:30</option>
+<option value='12_45'>12:45</option>
+<option value='13_00'>13:00</option>
+<option value='13_15'>13:15</option>
+<option value='13_30'>13:30</option>
+<option value='13_45'>13:45</option>
+<option value='14_00'>14:00</option>
+<option value='14_15'>14:15</option>
+<option value='14_30'>14:30</option>
+<option value='14_45'>14:45</option>
+<option value='15_00'>15:00</option>
+<option value='15_15'>15:15</option>
+<option value='15_30'>15:30</option>
+<option value='15_45'>15:45</option>
+<option value='16_00'>16:00</option>
+<option value='16_15'>16:15</option>
+<option value='16_30'>16:30</option>
+<option value='16_45'>16:45</option>
+<option value='17_00'>17:00</option>
+<option value='17_15'>17:15</option>
+<option value='17_30'>17:30</option>
+<option value='17_45'>17:45</option>
+<option value='18_00'>18:00</option>
+<option value='18_15'>18:15</option>
+<option value='18_30'>18:30</option>
+<option value='18_45'>18:45</option>
+<option value='19_00'>19:00</option>
+<option value='19_15'>19:15</option>
+<option value='19_30'>19:30</option>
+<option value='19_45'>19:45</option>
+<option value='20_00'>20:00</option>
+<option value='20_15'>20:15</option>
+<option value='20_30'>20:30</option>
+<option value='20_45'>20:45</option>
+<option value='21_00'>21:00</option>
+<option value='21_15'>21:15</option>
+<option value='21_30'>21:30</option>
+<option value='21_45'>21:45</option>
+<option value='22_00'>22:00</option>
+<option value='22_15'>22:15</option>
+<option value='22_30'>22:30</option>
+<option value='22_45'>22:45</option>
+<option value='23_00'>23:00</option>
+<option value='23_15'>23:15</option>
+<option value='23_30'>23:30</option>
+<option value='23_45'>23:45</option>
+</select>
+<br>
+<b>Choose Opacity</b>
+<br>
+
+0<input id="OPslider" type="range" min="0" max="100" value="60" list="steptlist">100
+<datalist id="steptlist">
+    <option>0</option>
+    <option>25</option>
+    <option>50</option>
+    <option>75</option>
+    <option>100</option>
+</datalist>
+</p>
+<p align='justify' style='margin:5%'>
+<font style="color:grey; font-size:12">
+Please note that KSNDMC data might take some time to load depending on your internet connection! (Data size : 3 MB for one Time Step)
+</font>
+<br>
+<font style="font-size:13">
+<b>1.</b> Map displays accumulated rainfall as provided by KSNDMC (8:30 AM to 8:30 AM) at 15 minute interval<br><b>2.</b> Hover over the map to get the rainfall at that time (displayed in top-right)<br><b>3.</b> Click on the map to get accumulated rainfall chart for the location from the interpolated map data
+<br><br>
+Data Source: <b>Karnataka State Natural Disaster Monitoring Centre (KSNDMC)</b>
+<br>
+</font>
+<font style="color:grey; font-size:12">Created by Raj Bhagat Palanichamy (Contact: rajbhagat.p@wri.org; Ph: 9442239111)</font>
+</p>
+</form>
+</div>
+<div id="map" class="map" style="height: 90%; width: 75%; left: 25px; float:left; top:5%; border:1px solid black;">
+<script src="script/mapper.js"></script>
+</div>
+</body>
+</html>
